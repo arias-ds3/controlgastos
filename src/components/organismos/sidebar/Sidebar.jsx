@@ -8,11 +8,11 @@ import {
 import { NavLink } from "react-router-dom";
 export function Sidebar({ state, setState }) {
   return (
-    <Main isOpen={state}>
+    <Main $isOpen={state}>
       <span className="Sidebarbutton" onClick={() => setState(!state)}>
         {<v.iconoflechaderecha />}
       </span>
-      <Container isOpen={state} className={state ? "active" : ""}>
+      <Container $isOpen={state} className={state ? "active" : ""}>
         <div className="Logocontent">
           <div className="imgcontent">
             <img src={v.logo} />

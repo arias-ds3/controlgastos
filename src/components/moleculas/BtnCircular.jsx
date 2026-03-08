@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 export function BtnCircular({
   icono,
@@ -32,8 +33,8 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  transform: translatex(${(props) => props.translateX})
-    translateY(${(props) => props.translateY});
+  transform: translateX(${props => props.translateX}) 
+    translateY(${props => props.translateY});
 
   span {
     font-size: ${(props) => props.fontsize};

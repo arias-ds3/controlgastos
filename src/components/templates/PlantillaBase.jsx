@@ -49,6 +49,6 @@ const Container = styled.div`
   }
   .main {
     grid-area: main;
-    background-color: rgba(179, 46, 241, 0.14);
+    background-color: rgba(179, 46, 241, 0.14); 
   }
 `;

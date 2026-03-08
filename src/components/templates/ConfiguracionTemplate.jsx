@@ -8,8 +8,15 @@ export function ConfiguracionTemplate() {
       <header className="header">
         <Header stateConfig={{ state: state, setState: ()=>setState(!state) }} />
       </header>
-      <section className="area1"></section>
-      <section className="area2"></section>
+      <section className="area1">
+        <h1>Ajustes</h1>
+      </section>
+      <section className="area2">
+        <ContentCard>
+          <span>Moneda:</span>
+        <ContentCard/>
+        </ContentCard>
+      </section>
       <section className="main"></section>
     </Container>
   );
@@ -49,4 +56,13 @@ const Container = styled.div`
     grid-area: main;
     background-color: rgba(179, 46, 241, 0.14);
   }
+`;
+const ContentCard = styled.div`
+display: flex;
+text-align: start;
+align-items: center;
+gap: 20px;
+position: relative;
+width: 100%;
+justify-content: center;
 `;

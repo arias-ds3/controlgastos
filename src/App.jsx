@@ -26,18 +26,19 @@ function App() {
           <AuthContextProvider>
             {pathname != "/login"?(<Container className={sidebarOpen ? "active" : ""}>
               <div className="ContentSidebar">
-                <Sidebar state={sidebarOpen} setState={setSidebarOpen}/>
+                 <Sidebar
+                    state={sidebarOpen}
+                    setState={() => setSidebarOpen(!sidebarOpen)}/>
               </div>
               <div className="ContentMenuambur">
                 <Menuambur />
               </div>
               
               <Containerbody>
-                
+                <MyRoutes />
               </Containerbody>
             </Container>):(<MyRoutes />)}
 
-            
             <ReactQueryDevtools initialIsOpen={true} />
           </AuthContextProvider>
         </ThemeProvider>
@@ -75,6 +76,7 @@ transition: all 0.3s ease-in-out;
 const Containerbody = styled.div`
 grid-column: 1;
 width: 100%;
+
 @media ${Device.tablet} {
   grid-column: 2;
 }
