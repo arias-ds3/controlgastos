@@ -13,12 +13,14 @@
     "@supabase/supabase-js": "^2.98.0",
     "@tanstack/react-query": "^4.35.0",
     "@tanstack/react-query-devtools": "^4.35.0",
+    "iso-country-currency": "^0.7.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.30.3",
     "styled-components": "^6.3.11",
+    "sweetalert2": "^11.26.22",
     "zustand": "^4.5.7"
   },
   "devDependencies": {
