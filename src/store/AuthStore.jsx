@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { create } from "zustand";
 import { supabase } from "../index";
 export const useAuthStore = create((set) => ({
@@ -13,7 +13,9 @@ export const useAuthStore = create((set) => ({
         throw new Error("A ocurrido un error durante la autenticación");
       set({ isAuth: true });
       return data;
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   },
   signout: async () => {
     const { error } = await supabase.auth.signOut();

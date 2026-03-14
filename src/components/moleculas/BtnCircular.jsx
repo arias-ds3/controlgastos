@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import styled from "styled-components";
 export function BtnCircular({
   icono,
@@ -12,20 +11,20 @@ export function BtnCircular({
 }) {
   return (
     <Container
-      bgcolor={bgcolor}
-      textColor={textColor}
+      $bgcolor={bgcolor}
+      $textColor={textColor}
       height={height}
       width={width}
-      fontsize={fontsize}
-      translateX={translateX}
-      translateY={translateY}
+      $fontsize={fontsize}
+      $translateX={translateX}
+      $translateY={translateY}
     >
       <span>{icono}</span>
     </Container>
   );
 }
 const Container = styled.div`
-  background-color: ${(props) => props.bgcolor};
+  background-color: ${(props) => props.$bgcolor};
   min-width: ${(props) => props.width};
   min-height: ${(props) => props.height};
   border-radius: 50%;
@@ -33,12 +32,12 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  transform: translateX(${props => props.translateX}) 
-    translateY(${props => props.translateY});
+  transform: translateX(${props => props.$translateX}) 
+    translateY(${props => props.$translateY});
 
   span {
-    font-size: ${(props) => props.fontsize};
+    font-size: ${(props) => props.$fontsize};
     text-align: center;
-    color: ${(props) => props.textColor};
+    color: ${(props) => props.$textColor};
   }
 `;

@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { Icono } from "../../index";
+import { Icono, ColorContent} from "../../index";
 export function ItemsDesplegable({ item,funcion }) {
   return (
     <Container onClick={funcion}>
       <Icono>{item.icono}</Icono>
+      <ColorContent $color={item.color} $alto="12px" $ancho="12px"/>
       <span>{item.text}</span>
     </Container>
   );

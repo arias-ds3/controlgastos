@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ThemeContext } from "../../App";
+import {ThemeContext} from "../../App";
 import {
   Header,
   Selector,
@@ -9,8 +9,10 @@ import {
   ListaGenerica,
   TemasData,
   Btnsave,
+  // Fondo1,
 } from "../../index";
 import { useState, useEffect, useContext } from "react";
+// import { set } from "react-hook-form";
 
 export function ConfiguracionTemplate() {
   const { datausuarios, editartemamonedauser } = useUsuariosStore();
@@ -23,26 +25,25 @@ export function ConfiguracionTemplate() {
   //pais moneda
   const moneda = select.symbol ? select.symbol : datausuarios.moneda;
   const pais = select.countryName ? select.countryName : datausuarios.pais;
-  const paisSeleccionado = "💵 ​" + moneda + " " + pais;
-  // tema
-  // convertimos a string porque el valor puede venir como número 0/1
+  const paisSeleccionado = "💵 " + moneda + " " + pais;
+  //tema
+  // convertimos a string porque el valor puede venir como numero 0/!
   const iconobd = String(datausuarios.tema) === "0" ? "🌞" : "🌚";
   const temabd = String(datausuarios.tema) === "0" ? "light" : "dark";
-  // cuando elegimos un tema, el objeto trae `descripcion` y `icono`
+  // cuando elegimos un tema, el objeto trae 'descripcion' y 'icono'
   const temainicial = selectTema.descripcion ? selectTema.descripcion : temabd;
   const iconoinicial = selectTema.icono ? selectTema.icono : iconobd;
   const temaSeleccionado = iconoinicial + " " + temainicial;
 
   // efecto de debug para ver cuando cambia el usuario
   useEffect(() => {
-    console.log("[Configuración] datausuarios ahora", datausuarios);
+    console.log("[Configuracion] datausuarios ahora", datausuarios);
   }, [datausuarios]);
 
-  // funcion editar
+  //funcion editar
   const editar = async () => {
-    const themeElegido = selectTema.descripcion === "light" ? 0 : 1;
+    const themeElegido = selectTema.descripcion === "light" ? "0" : "1";
     const p = {
-      // enviar número para evitar confusión
       tema: themeElegido,
       moneda: moneda,
       pais: pais,
@@ -50,10 +51,10 @@ export function ConfiguracionTemplate() {
     };
     console.log("[Configuración] guardando configuración", p);
     // aplicar tema inmediatamente en la interfaz
-    setTheme(themeElegido === 0 ? "light" : "dark");
+    setTheme(themeElegido === "0" ? "light" : "dark");    
     await editartemamonedauser(p);
-    // limpiar selección local tras el guardado
     setSelecttema({});
+    
   };
   return (
     <Container>
